@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Reservas | Zona Toy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero card">
+      <div>
+        <p class="eyebrow">🎮 ZONA TOY</p>
+        <h1>Reserva tu máquina</h1>
+        <p class="muted">Tu horario, tu máquina completa. Sin pago por adelantado.</p>
+      </div>
+      <a class="small-link" href="admin.html">Acceso empleados</a>
+    </section>
+
+    <section class="card">
+      <div class="grid three">
+        <label>
+          <span>Máquina</span>
+          <select id="resource"></select>
+        </label>
+        <label>
+          <span>Fecha</span>
+          <input id="date" type="date">
+        </label>
+        <label>
+          <span>Duración</span>
+          <select id="duration"></select>
+        </label>
+      </div>
+
+      <p class="rule">⏱️ Reservas de <strong>1 a 2 horas</strong>. Cada reserva bloquea la máquina completa.</p>
+
+      <div class="section-title">
+        <h2>Elige tu hora de inicio</h2>
+        <span id="availabilityStatus" class="muted"></span>
+      </div>
+      <div id="slots" class="slots"></div>
+    </section>
+
+    <section id="bookingCard" class="card hidden">
+      <h2>Completa tu reserva</h2>
+      <p id="selectedSlotText" class="selection"></p>
+
+      <form id="bookingForm">
+        <div class="grid two">
+          <label>
+            <span>Nombre</span>
+            <input id="name" required maxlength="80" autocomplete="name" placeholder="Tu nombre">
+          </label>
+          <label>
+            <span>WhatsApp</span>
+            <input id="phone" required maxlength="20" inputmode="tel" autocomplete="tel" placeholder="Ej. 7711234567">
+          </label>
+        </div>
+
+        <label>
+          <span>Notas (opcional)</span>
+          <textarea id="notes" maxlength="300" placeholder="Ej. vamos 2 jugadores"></textarea>
+        </label>
+
+        <label class="check">
+          <input id="accept" type="checkbox" required>
+          <span>Confirmo que asistiré. Si necesito cancelar o cambiar la reserva, contactaré directamente a Zona Toy.</span>
+        </label>
+
+        <button id="submitBtn" class="primary" type="submit">Confirmar reserva</button>
+      </form>
+    </section>
+
+    <section id="successCard" class="card success hidden">
+      <div class="big">✅</div>
+      <h2>¡Reserva registrada!</h2>
+      <p id="successText"></p>
+      <p class="muted">No puedes borrar tu reserva desde aquí. Para cambios o cancelaciones, contacta a Zona Toy.</p>
+      <button id="newBooking" class="secondary">Hacer otra reserva</button>
+    </section>
+
+    <footer>Zona Toy · Sistema de reservaciones</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="supabase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+:root{--bg:#06110f;--panel:#0b1e1a;--panel2:#102a24;--text:#f4fff9;--muted:#9fc2b5;--green:#7cff00;--green2:#38d66d}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 15% 0%,rgba(124,255,0,.08),transparent 30%),linear-gradient(180deg,#03100d,#071a15 45%,#03100d);color:var(--text);font-family:"Outfit",system-ui,sans-serif;min-height:100vh}
+.shell{width:min(980px,calc(100% - 28px));margin:28px auto 70px}
+.card{background:linear-gradient(180deg,rgba(16,42,36,.96),rgba(7,26,21,.96));border:1px solid rgba(124,255,0,.24);border-radius:22px;padding:24px;margin-bottom:18px;box-shadow:0 12px 42px rgba(0,0,0,.25)}
+.hero{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}.eyebrow{color:var(--green);font-weight:800;letter-spacing:.09em;margin:0 0 8px}
+h1{font-size:clamp(34px,7vw,62px);line-height:.95;margin:0 0 14px}h2{margin:0 0 14px}.muted{color:var(--muted)}
+.small-link{color:var(--green);text-decoration:none;font-weight:700;white-space:nowrap}.grid{display:grid;gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+label{display:block;margin-bottom:16px}label>span{display:block;font-size:.9rem;font-weight:700;color:#d7eee5;margin-bottom:7px}
+input,select,textarea{width:100%;border:1px solid #2e6655;background:#081813;color:white;border-radius:13px;padding:13px 14px;font:inherit;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--green)}textarea{min-height:92px;resize:vertical}
+.rule{background:rgba(124,255,0,.08);border:1px solid rgba(124,255,0,.2);padding:12px 14px;border-radius:13px;color:#dfffc7}
+.section-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:18px 0 14px}.section-title h2{margin:0}
+.slots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.slot{border:1px solid #2d7059;background:#081813;color:white;border-radius:14px;padding:14px 8px;font:inherit;font-weight:800;cursor:pointer}
+.slot:hover,.slot.selected{border-color:var(--green);background:rgba(124,255,0,.12);color:var(--green)}.slot.busy{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+button{font:inherit}.primary,.secondary,.ghost{border-radius:14px;padding:13px 18px;font-weight:800;cursor:pointer;border:1px solid transparent}
+.primary{background:linear-gradient(90deg,var(--green),var(--green2));color:#0a2116;width:100%}.secondary{background:#12362d;color:var(--green);border-color:#2b765d}.ghost{background:transparent;color:#d7eee5;border-color:#315d51}
+.check{display:flex;gap:10px;align-items:flex-start}.check input{width:auto;margin-top:4px}.check span{margin:0;font-weight:500}.selection{color:var(--green);font-weight:800}.hidden{display:none!important}.success{text-align:center}.big{font-size:48px}
+footer{text-align:center;color:#789b8e;margin-top:24px}.narrow{max-width:520px;margin-left:auto;margin-right:auto}
+.toolbar{display:grid;grid-template-columns:2fr 2fr auto auto;gap:12px;align-items:end}.toolbar label{margin:0}.badge{background:rgba(124,255,0,.13);border:1px solid rgba(124,255,0,.35);color:var(--green);padding:4px 10px;border-radius:999px}
+.reservation-list{display:grid;gap:12px}.reservation{display:grid;grid-template-columns:140px 1fr auto;gap:18px;align-items:center;background:#081813;border:1px solid #254d42;border-radius:16px;padding:16px}.reservation .time{font-size:1.08rem;font-weight:800;color:var(--green)}
+.reservation strong{display:block;font-size:1.05rem}.reservation .meta{color:var(--muted);font-size:.9rem;margin-top:4px}.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.danger{background:#3c1818;border:1px solid #7c3030;color:#ffb4b4;border-radius:10px;padding:8px 10px;font-weight:700;cursor:pointer}.done{background:#153b2e;border:1px solid #32705a;color:#b6f7d5;border-radius:10px;padding:8px 10px;font-weight:700;cursor:pointer}.error{color:#ff9f9f}.empty{color:var(--muted);text-align:center;padding:32px}
+@media(max-width:720px){.hero{display:block}.hero .small-link{display:inline-block;margin-top:10px}.grid.two,.grid.three{grid-template-columns:1fr}.slots{grid-template-columns:repeat(2,minmax(0,1fr))}.toolbar{grid-template-columns:1fr 1fr}.reservation{grid-template-columns:100px 1fr}.actions{grid-column:1/-1;justify-content:flex-start}}

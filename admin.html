@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Calendario | Zona Toy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero card">
+      <div>
+        <p class="eyebrow">🔐 ZONA TOY · EMPLEADOS</p>
+        <h1>Calendario de reservas</h1>
+        <p class="muted">Solo personal autorizado.</p>
+      </div>
+      <a class="small-link" href="index.html">Ir a reservas</a>
+    </section>
+
+    <section id="loginCard" class="card narrow">
+      <h2>Entrar</h2>
+      <form id="loginForm">
+        <label><span>Correo</span><input id="email" type="email" required autocomplete="email"></label>
+        <label><span>Contraseña</span><input id="password" type="password" required autocomplete="current-password"></label>
+        <button class="primary" type="submit">Entrar</button>
+      </form>
+      <p id="loginError" class="error"></p>
+    </section>
+
+    <section id="adminPanel" class="hidden">
+      <div class="card toolbar">
+        <label><span>Fecha</span><input id="adminDate" type="date"></label>
+        <label>
+          <span>Máquina</span>
+          <select id="adminResource"><option value="">Todas</option></select>
+        </label>
+        <button id="refreshBtn" class="secondary">Actualizar</button>
+        <button id="logoutBtn" class="ghost">Salir</button>
+      </div>
+
+      <section class="card">
+        <div class="section-title">
+          <h2>Reservas</h2>
+          <span id="count" class="badge">0</span>
+        </div>
+        <div id="reservations" class="reservation-list"></div>
+      </section>
+    </section>
+
+    <footer>Zona Toy · Panel interno</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
