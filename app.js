@@ -23,7 +23,22 @@ async function loadSlots(){
   if(!date||!resource||!duration)return;
 
   const day=new Date(`${date}T12:00:00`).getDay(), hours=cfg.hours[day];
-  const {data:booked,error}=await sb.rpc("get_booked_slots",{p_date:date,p_resource:resource},{get:true});
+  let booked = [];
+let error = null;
+
+try {
+  const url = `${window.SUPABASE_URL}/rest/v1/rpc/get_booked_slots?p_date=${encodeURIComponent(date)}&p_resource=${encodeURIComponent(resource)}&apikey=${encodeURIComponent(window.SUPABASE_PUBLISHABLE_KEY)}`;
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(`Supabase respondió ${response.status}`);
+  }
+
+  booked = await response.json();
+} catch (e) {
+  error = e;
+}
   if(error){console.error(error);statusEl.textContent="Error";slotsEl.innerHTML=`<p class="error">${error.message}</p>`;return;}
 
   const reservations=(booked||[]).map(x=>({start:minutes(String(x.start_time).slice(0,5)),end:minutes(String(x.end_time).slice(0,5))}));
