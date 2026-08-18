@@ -23,7 +23,7 @@ async function loadSlots(){
   if(!date||!resource||!duration)return;
 
   const day=new Date(`${date}T12:00:00`).getDay(), hours=cfg.hours[day];
-  const {data:booked,error}=await sb.rpc("get_booked_slots",{p_date:date,p_resource:resource});
+  const {data:booked,error}=await sb.rpc("get_booked_slots",{p_date:date,p_resource:resource},{get:true});
   if(error){console.error(error);statusEl.textContent="Error";slotsEl.innerHTML=`<p class="error">${error.message}</p>`;return;}
 
   const reservations=(booked||[]).map(x=>({start:minutes(String(x.start_time).slice(0,5)),end:minutes(String(x.end_time).slice(0,5))}));
