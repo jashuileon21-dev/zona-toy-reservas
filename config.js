@@ -1,6 +1,8 @@
 window.ZONA_TOY_CONFIG = {
   businessName: "Zona Toy",
   timezone: "America/Mexico_City",
+  supabaseUrl: "https://uvlmkgaikudoagokwvbe.supabase.co",
+supabaseKey: "sb_publishable_RQ_aYmgFkYbR3ODmm-RaTg_hJ3lNg5u",
 
   // La cuadrícula avanza cada 30 min para aprovechar el cierre de 8:30 PM.
   slotStepMinutes: 30,
