@@ -24,7 +24,7 @@ async function loadSlots(){
 
   const day=new Date(`${date}T12:00:00`).getDay(), hours=cfg.hours[day];
   const {data:booked,error}=await sb.rpc("get_booked_slots",{p_date:date,p_resource:resource});
-  if(error){console.error(error);statusEl.textContent="Error";slotsEl.innerHTML='<p class="error">Falta conectar/configurar Supabase. Revisa README.md.</p>';return;}
+  if(error){console.error(error);statusEl.textContent="Error";slotsEl.innerHTML=`<p class="error">${error.message}</p>`;return;}
 
   const reservations=(booked||[]).map(x=>({start:minutes(String(x.start_time).slice(0,5)),end:minutes(String(x.end_time).slice(0,5))}));
   const open=minutes(hours.open), close=minutes(hours.close);
