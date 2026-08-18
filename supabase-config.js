@@ -1,2 +1,2 @@
-window.SUPABASE_URL = "PEGA_AQUI_TU_SUPABASE_URL";
-window.SUPABASE_PUBLISHABLE_KEY = "PEGA_AQUI_TU_PUBLISHABLE_KEY";
+window.SUPABASE_URL = "https://uvlmkgaikudoagokwvvbe.supabase.co";
+window.SUPABASE_PUBLISHABLE_KEY = "sb_publishable_RQ_aYmgFkYbR3ODmm-RaTg_hJ3lNg5u";
